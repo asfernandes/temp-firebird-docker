@@ -13,6 +13,11 @@ jobs:
         with:
           fetch-depth: 10
 
+      - name: Install tools
+        shell: pwsh
+        run: |
+          Install-Module InvokeBuild -Force
+
       - name: Build
         shell: pwsh
         run: |
@@ -22,3 +27,4 @@ jobs:
         shell: pwsh
         run: |
           Invoke-Build Test
+
